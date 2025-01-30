@@ -74,6 +74,10 @@ if head_dim is None:
 if num_kv_heads is None:
     num_kv_heads: int =  31 if attn_type=="mqa" else num_heads
 
+
+print(f"num_kv_heads: {num_kv_heads}, num_heads: {num_heads}, num_queries_per_kv: {num_heads//num_kv_heads}")
+print(f"booster: {booster}")
+
 ### CONFIGS
 wandb_project_name = "Ohara-MLA2"
 wandb_run_name = random_name()
@@ -97,7 +101,7 @@ mlp_expansion_ratio: int = 1.5  # putting this low so I can fit attention layers
 
 d_model: int = 1024
 hidden_dim = int(d_model * mlp_expansion_ratio)
-num_layers: int = 32//8
+num_layers: int = 32
 
 v_head_dim = head_dim
 nope_head_dim = 32
@@ -132,7 +136,7 @@ resume_training = False
 push_to_hub = False
 checkpoint_path = "./ckpt/model.pt"
 
-wandb_logger = False
+wandb_logger = True
 tensorboard_logger = True
 
 
