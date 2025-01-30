@@ -79,7 +79,7 @@ print(f"num_kv_heads: {num_kv_heads}, num_heads: {num_heads}, num_queries_per_kv
 print(f"booster: {booster}")
 
 ### CONFIGS
-wandb_project_name = "Ohara-MLA2"
+wandb_project_name = "Ohara-ScaleBoostedMQA-v1"
 wandb_run_name = random_name()
 
 learning_rate: float = 5e-4
