@@ -101,7 +101,7 @@ mlp_expansion_ratio: int = 1.5  # putting this low so I can fit attention layers
 
 d_model: int = 1024
 hidden_dim = int(d_model * mlp_expansion_ratio)
-num_layers: int = 32
+num_layers: int = 16
 
 v_head_dim = head_dim
 nope_head_dim = 32
@@ -276,7 +276,7 @@ def main():
         print(f"Resuming from iteration: {start_iter}")
 
     # Let's GO!!
-    # trainer.train(start_iter=start_iter)
+    trainer.train(start_iter=start_iter)
 
     # TODO: Replace this inference
     # start: float = time.time()
